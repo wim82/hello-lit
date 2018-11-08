@@ -1,4 +1,4 @@
-
+//LOOK MUM NO IMPORTS!
 
 //render in lit is just a fancy way of adding nodes to the dom effectively
 const render = (what, where) => {

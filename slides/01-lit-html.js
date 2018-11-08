@@ -1,4 +1,4 @@
-import { html, render } from '../node_modules/lit-html/lit-html.js'; //imported via path if you don't use build tool
+import { html, render } from 'https://unpkg.com/lit-html?module';
 
 
 /*****************
