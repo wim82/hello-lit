@@ -1,4 +1,4 @@
-import { html, render } from 'https://unpkg.com/lit-html?module';
+import { html, render } from 'https://unpkg.com/lit-html@0.12.0/lit-html.js';
 
 
 /*****************
@@ -16,6 +16,12 @@ const myTemplate = (name) => html`
 render(myTemplate('quite awesome'), document.querySelector('#first'));
 //render(myTemplate('<span style="color:red;">🔥🔥🔥 lit 🔥🔥🔥</span>'), document.querySelector('#first'));
 
+
+
+/*************
+ *  UPDATE
+**************/
+
 //update it to show the dynamic changes
 setTimeout(() => {
     render(myTemplate('an update after 4 seconds.'), document.querySelector('#first'));
@@ -23,8 +29,12 @@ setTimeout(() => {
 
 
 
+/*****************************************
+ * FANCY STUFF IN THE TEMPLATE PARAMETERS
+ *****************************************/
+
 //we can also do very fancy stuff
-const complainCase = (word) => (word === 'friday' ? 'yaay' : 'pffff') + ', it is ' + word + ' again';
+const complainCase = (word) => `${(word === 'friday' ? 'yaay' : 'pffff')}, it is ${word} again`;
 
 const daysTemplate = (days) => html`<ul>
     <!-- start of an IIFE in a template -->
@@ -39,12 +49,12 @@ render(daysTemplate(['monday', 'tuesday', 'wednesday', 'thursday', 'friday']), d
 
 
 
-/** Template Guidelines
+/** Template Guidelines: how do you write a valid template?
  * 
- * Templates must be well-formed when all expressions are replaced by empty values.
- * Expressions can only occur in attribute-value and text-content positions.
- * Expressions cannot appear where tag or attribute names would appear.
- * Templates can have multiple top-level elements and text.
- * Templates should not contain unclosed elements - they will be closed by the HTML parser.
+ * 1. Templates must be well-formed when all expressions are replaced by empty values.
+ * 2. Expressions can only occur in attribute-value and text-content positions.
+ * 3. Expressions cannot appear where tag or attribute names would appear.
+ * 4. Templates can have multiple top-level elements and text.
+ * 5. Templates should not contain unclosed elements - they will be closed by the HTML parser.
  * 
  */
