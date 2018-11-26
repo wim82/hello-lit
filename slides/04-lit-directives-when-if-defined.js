@@ -9,7 +9,7 @@ const myTemplate = ({ name, someClass }) => html`
     .bling {color: cornflowerblue;}
     </style>
     
-    <h1>Hello Lit</h1>    
+    <h3>when() and ifDefined()</h3>    
         ${when(someClass === undefined, 
                 () => html`oh no, im not defined`,
                 () => html`ow yeah, im defined`)}
@@ -28,6 +28,6 @@ render(myTemplate({
 
 
 //Helper to display the innerHTML in the body rather than inspecting element to view source.
-render(html`<h3>Code snipppet</h3><pre>${
+render(html`<h3>Dom looks like</h3><pre>${
     document.querySelector('#first').innerHTML
     }</pre>`, document.querySelector('#second'))

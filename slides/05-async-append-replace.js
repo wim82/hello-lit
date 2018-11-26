@@ -7,6 +7,7 @@ const wait = (timeToWait) => new Promise((resolve) => setTimeout(resolve, timeTo
 
 /**
  * Returns an async iterable that yields increasing integers.
+ * Because of the ms++ it will always do it 1ms slower as the time before
  */
 async function* countUp() {
   let ms = 1;
@@ -16,7 +17,10 @@ async function* countUp() {
   }
 }
 
-render(html`
-  Milliseconds running: <span style="color:#FF6600">${asyncReplace(countUp())}</span>.
-  All The Miliseconds in a row: <span style="word-break:break-all;">${asyncAppend(countUp())} </span>.
-`, document.querySelector('#first'));
+const template = html`
+<h3>Async Replace and Async Append</h3>
+<div>Milliseconds running: <span style="color:#FF6600">${asyncReplace(countUp())} ms until next update</span></div>
+<div>All The Miliseconds in a row: <span style="word-break:break-all;">${asyncAppend(countUp())} ms</span></div>
+`
+
+render(template, document.querySelector('#first'));
