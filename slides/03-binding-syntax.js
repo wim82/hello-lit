@@ -1,4 +1,4 @@
-import { html, render } from 'https://unpkg.com/lit-html?module';
+import { html, render } from 'https://unpkg.com/lit-html@0.12.0/lit-html.js';
 
 // Define a template
 const myTemplate = ({name, id, value, disabled, onClick}) => html`
