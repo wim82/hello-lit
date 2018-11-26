@@ -6,8 +6,8 @@ const myTemplate = ({name, id, value, disabled, onClick}) => html`
         <p>This is ${name}</p>
         <pre>
         ${`
-                <button id=\${id}                //attribute
-                        .someProperty=\${value}  //for a property, so no stringification
+                <button id=\${id}                //no special syntax to bind to attribute
+                        .someProperty=\${value}  //. binding syntax for a property, so no stringification
                         ?required=\${required}   //turns it into a boolean
                         @click=\${onClick}       //adds an event listener
                         >Hit Me Lit!</button> 
