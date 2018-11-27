@@ -2,13 +2,13 @@ import { html, render } from 'https://unpkg.com/lit-html@0.12.0/lit-html.js';
 
 // Define a template
 const myTemplate = ({name, id, value, disabled, onClick}) => html`
-        <h1>Hello Lit</h1>
+        <h3>Lit-html binding syntax</h3>
         <p>This is ${name}</p>
         <pre>
         ${`
                 <button id=\${id}                //no special syntax to bind to attribute
                         .someProperty=\${value}  //. binding syntax for a property, so no stringification
-                        ?required=\${required}   //turns it into a boolean
+                        ?required=\${required}   //for booleans, checks truthy-ness
                         @click=\${onClick}       //adds an event listener
                         >Hit Me Lit!</button> 
         `}
@@ -19,7 +19,6 @@ const myTemplate = ({name, id, value, disabled, onClick}) => html`
                 @click=${onClick}>Hit Me Lit!</button>
         `;
 
-// Render the template to the document
 render(myTemplate({
     name: "the template binding syntax",
     id: "some-id",

@@ -18,9 +18,9 @@ async function* countUp() {
 }
 
 const template = html`
-<h3>Async Replace and Async Append</h3>
-<div>Milliseconds running: <span style="color:#FF6600">${asyncReplace(countUp())} ms until next update</span></div>
-<div>All The Miliseconds in a row: <span style="word-break:break-all;">${asyncAppend(countUp())} ms</span></div>
+<h3>asyncReplace() and asyncAppend() directives</h3>
+<div>replace milliseconds: <span style="color:#FF6600">${asyncReplace(countUp())} ms until next update</span></div>
+<div>append milliseconds: <span style="word-break:break-all;">${asyncAppend(countUp())} ms</span></div>
 `
 
 render(template, document.querySelector('#first'));

@@ -1,6 +1,8 @@
 import { html, render } from 'https://unpkg.com/lit-html@0.12.0/lit-html.js';
 import { until } from  'https://unpkg.com/lit-html@0.12.0/directives/until.js';
 
+
+console.log('hola');
 const somethingHappens = () => new Promise((resolve) => setTimeout(() => resolve('an incredible update'), 4000));
 
 render(html`

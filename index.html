@@ -3,15 +3,13 @@
 
 <head>
     <link rel="stylesheet" href="https://lit-html.polymer-project.org/css/main.css">
-    <link rel="stylesheet" href="https://lit-html.polymer-project.org/css/pygments.css">
-
     <style>
         hr {
-            margin-top:100px;
+            margin-top: 20px;
         }
 
         [disabled] {
-            background-color:lightgray;
+            background-color: lightgray;
         }
 
         pre {
@@ -23,29 +21,60 @@
         }
 
         footer {
-            position: fixed; 
+            position: fixed;
             bottom: 0;
-            background-color:#FAFAFA;
-            width:100%;
+            background-color: #FAFAFA;
+            width: 100%;
         }
-        
+
+        #first {padding-top: 80px;}
     </style>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>hello-lit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <script type="module" src="slides/01-lit-html.js"></script> -->
-    <!-- <script type="module" src="slides/02-template-literal.js"></script> -->
-    <!-- <script type="module" src="slides/03-binding-syntax.js"></script> -->
-    <!-- <script type="module" src="slides/04-lit-directives-when-if-defined.js"></script> -->
-    <!-- <script type="module" src="slides/05-async-append-replace.js"></script> -->
-    <!-- <script type="module" src="slides/06-until.js"></script> -->
-    <script type="module" src="slides/07-repeat.js"></script>
-    <!-- <script type="module" src="slides/08-guard.js"></script> -->
 </head>
 
 <body>
+    <nav class="main-nav">
+        <p>
+            <a class="nav-title" href="/">lit-html</a>
+        </p>
+        <div class="flex"></div>
+        <p>
+            <a class="nav-item" href="#01-lit-html">intro</a>
+        </p>
+        <p>
+            <a class="nav-item" href="#02-template-literal">template literal</a>
+        </p>
+        <p>
+            <a class="nav-item" href="#03-binding-syntax">binding syntax</a>
+        </p>
+        <p>
+            <a class="nav-item" href="#04-lit-directives-when-if-defined">when/if/defined</a>
+        </p>
+        <p>
+            <a class="nav-item" href="#05-async-append-replace">async append/replace</a>
+        </p>
+        <p>
+            <a class="nav-item" href="#06-until">until</a>
+        </p>
+        <p>
+            <a class="nav-item" href="#07-repeat">repeat</a>
+        </p>
+        <p>
+            <a class="nav-item" href="#08-guard">guard</a>
+        </p>
+    </nav>
     <section>
+        <header id="hero" class="hero">
+            <div class="wrapper">
+                <h1 class="hero-title">lit-html</h1>
+                <p class="hero-caption">An efficient, expressive, extensible HTML templating library for JavaScript</p>
+                <p><a class="hero-link" href="#01-lit-html">Get Started</a></p>
+            </div>
+        </header>
+
         <div class="wrapper" id="first"></div>
     </section>
     <hr />
@@ -61,6 +90,16 @@
             </div>
         </div>
     </footer>
+
+    <script>
+            //hackerman code (crappy but little time)
+            if (window.location.hash) {
+                let module = window.location.hash.substring(1);
+                import(`./slides/${module}.js`);
+                document.getElementById('hero').remove();
+            }
+            window.onhashchange = () => window.location.reload();
+        </script>
 </body>
 
 </html>

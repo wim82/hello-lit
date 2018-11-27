@@ -33,7 +33,7 @@ const html =
 
 // Define a template
 const myTemplate = (name) => html`
-        <h1>Hello Lit</h1>
+        <h3>Without lit-html</h3>
         <p>This is ${name}</p>
         <em>I am a footer</em>
         `;

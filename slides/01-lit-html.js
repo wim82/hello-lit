@@ -7,14 +7,14 @@ import { html, render } from 'https://unpkg.com/lit-html@0.12.0/lit-html.js';
 
 // Define a template
 const myTemplate = (name) => html`
-        <h1>Hello Lit</h1>
+        <h3>Hello lit-html</h3>
         <p>This is ${name}</p>
         <em>I am a footer</em>
         `;
 
 // Render the template to the document
 render(myTemplate('quite awesome'), document.querySelector('#first'));
-//render(myTemplate('<span style="color:red;">🔥🔥🔥 lit 🔥🔥🔥</span>'), document.querySelector('#first'));
+//render(myTemplate(`<span style="color:red;">🔥🔥🔥 lit 🔥🔥🔥</span>`), document.querySelector('#first'));
 
 
 

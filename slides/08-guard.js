@@ -1,7 +1,7 @@
 import { html, render } from 'https://unpkg.com/lit-html@0.12.0/lit-html.js';
 import { guard } from  'https://unpkg.com/lit-html@0.12.0/directives/guard.js';
 
-let title = "hola";
+
 let weatherStats = [
   {
     temperature: 10,
@@ -30,48 +30,42 @@ let weatherStats = [
 
 ];
 
+const randomTemperature = () =>  Math.floor(Math.random() * 60) - 20;
 
 setInterval(() => {
 
-title += 'a';
 
-//change root reference
+
+//change root reference, this will pass a guard
+//immutable pattern
 /*
 weatherStats = weatherStats.map((item) => ({
   location: item.location,
-  temperature: Math.random()
-}))*/
+  temperature: randomTemperature()
+}))
+*/
 
-//vs change value
-weatherStats[0].location += "a";
+//vs change value inside the array, which will not pass the guard
+//mutable pattern
+weatherStats.forEach(item => item.temperature = randomTemperature())
 
 
-  render(template(weatherStats, title), document.querySelector('#first'));
+  render(template(weatherStats), document.querySelector('#first'));
 }, 1000);
 
 const template = (ws) => html`
+<h3>guard() directive</h3>
   <div>
     <h5>guarded</h5>
     ${guard(ws, () => ws.map(item => {
-      return html`<li>${item.location} - ${item.temperature}`}))}
+      return html`<div>☔️ ${item.location}: ${item.temperature}</div>`}))}
   </div>
   <hr>
   <div>
     <h5>unguarded</h5>
-    ${ws.map(item => html`<li>${item.location} - ${item.temperature}`)}
+    ${ws.map(item => html`<div>🌧 ${item.location}: ${item.temperature}</div>`)}
   </div>
   `
 
-
-
-// let template = (tit, ws) => html`
-// <h1>${tit}</h1>
-// ${ws.map(
-//  (stat) => 
-//   stat.temperature > 20 ? hot() : cold()
-// )}
-// `;
-
-
-render(template(weatherStats, title), document.querySelector('#first'));
+render(template(weatherStats), document.querySelector('#first'));
 
