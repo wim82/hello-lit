@@ -1078,7 +1078,7 @@ let template = () => html`
 </thead>
 <tbody>
 
-${repeatDirective()}
+${regularMap()}
 
 </tbody>
 </table>
@@ -1089,10 +1089,6 @@ render(template(), document.querySelector('#first'));
 
 
 
-export const offLoad = () => {
-  console.log('gonna offload');
-        clearInterval(interval);
-}
 
 /**
  * 
