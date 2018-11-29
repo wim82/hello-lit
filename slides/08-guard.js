@@ -33,11 +33,8 @@ let weatherStats = [
 const randomTemperature = () =>  Math.floor(Math.random() * 60) - 20;
 
 setInterval(() => {
-
-
-
 //change root reference, this will pass a guard
-//immutable pattern
+//(semi)immutable pattern
 /*
 weatherStats = weatherStats.map((item) => ({
   location: item.location,
@@ -53,17 +50,17 @@ weatherStats.forEach(item => item.temperature = randomTemperature())
   render(template(weatherStats), document.querySelector('#first'));
 }, 1000);
 
-const template = (ws) => html`
+const template = (weather) => html`
 <h3>guard() directive</h3>
   <div>
     <h5>guarded</h5>
-    ${guard(ws, () => ws.map(item => {
+    ${guard(weather, () => weather.map(item => {
       return html`<div>☔️ ${item.location}: ${item.temperature}</div>`}))}
   </div>
   <hr>
   <div>
     <h5>unguarded</h5>
-    ${ws.map(item => html`<div>🌧 ${item.location}: ${item.temperature}</div>`)}
+    ${weather.map(item => html`<div>🌧 ${item.location}: ${item.temperature}</div>`)}
   </div>
   `
 

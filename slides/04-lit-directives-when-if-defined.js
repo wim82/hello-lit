@@ -11,23 +11,23 @@ const myTemplate = ({ name, someClass }) => html`
     
     <h3>when() and ifDefined() directives</h3>    
         ${when(someClass === undefined, 
-                () => html`oh no, im not defined`,
-                () => html`ow yeah, im defined`)}
+                () => html`oh no, i have not been defined 😢😢😢`,
+                () => html`awesome, i am defined 👍😎🤩`)}
     <div>
-        <button ?disabled=${ ifDefined(someClass)} class=${ifDefined(someClass)}>This is ${name}</button>
-        <button ?disabled=${ someClass} class=${someClass}>This is without ${name}</button>
+        <button ?disabled=${ ifDefined(someClass)} class=${ifDefined(someClass)}>Has ${name}</button>
+        <button ?disabled=${ someClass} class=${someClass}>Does not have the ${name}</button>
     </div>
         `;
 
 // Render the template to the document
 render(myTemplate({
     name: "the ifDefined directive",
-    //someClass: undefined
-    someClass: "bling"
+    someClass: undefined
+    //someClass: "bling"
 }), document.querySelector('#first'));
 
 
 //Helper to display the innerHTML in the body rather than inspecting element to view source.
-render(html`<h4>Dom looks like</h4><pre>${
+render(html`<h4>Rendered DOM looks like</h4><pre>${
     document.querySelector('#first').innerHTML
     }</pre>`, document.querySelector('#second'))

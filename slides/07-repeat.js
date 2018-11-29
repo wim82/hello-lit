@@ -1066,15 +1066,15 @@ ${
 `
 
 let template = () => html`
-<h3>repeat() directive</h3>
+<h3>repeat() directive   ...or just a .map()</h3>
 <h4>${count} updates in ${Math.round(difference)} ms</h4>
 <table>
   <thead>
-    <td>Name</td>
-    <td>Animal</td>
-    <td>Email</td>
-    <td>Color</td>
-    <td>Car</td>
+    <td>👩‍💻 Name</td>
+    <td>🐒 Animal</td>
+    <td>📪 Email</td>
+    <td>🎨 Color</td>
+    <td>🚗 Car</td>
 </thead>
 <tbody>
 
@@ -1087,6 +1087,18 @@ ${regularMap()}
 
 render(template(), document.querySelector('#first'));
 
+
+/* 
+Ruphin: 
+The core difference between `map` and `repeat` is that `repeat` maintains state. 
+
+If you are shuffling components around that have internal state, like `input`s or other web components, 
+and you are not setting that state explicitly, `map` will cause problems, where `repeat` will not.
+
+From a performance perspective, I expect `map` to be faster in 99% of cases
+
+Just use map, and if your components have internal state, use repeat. That simple rule gets you the correct choice pretty much always
+*/
 
 
 

@@ -12,19 +12,15 @@
             background-color: lightgray;
         }
 
-        pre {
-            display: block;
-            border: 1px solid lightgray;
-            padding: 0 20px 0 20px;
-            background: #f5f5f5;
-            margin-top: 20px;
-        }
-
         footer {
             position: fixed;
             bottom: 0;
             background-color: #FAFAFA;
             width: 100%;
+        }
+        .bye {
+            text-align: center;
+            font-size: 144px;
         }
 
         #first {padding-top: 80px;}
@@ -37,52 +33,31 @@
 
 <body>
     <nav class="main-nav">
-        <p>
-            <a class="nav-title" href="/">lit-html</a>
-        </p>
+        <p><a class="nav-title" href="/">lit-html</a></p>
         <div class="flex"></div>
-        <p>
-            <a class="nav-item" href="#01-lit-html">intro</a>
-        </p>
-        <p>
-            <a class="nav-item" href="#02-template-literal">template literal</a>
-        </p>
-        <p>
-            <a class="nav-item" href="#03-binding-syntax">binding syntax</a>
-        </p>
-        <p>
-            <a class="nav-item" href="#04-lit-directives-when-if-defined">when/if/defined</a>
-        </p>
-        <p>
-            <a class="nav-item" href="#05-async-append-replace">async append/replace</a>
-        </p>
-        <p>
-            <a class="nav-item" href="#06-until">until</a>
-        </p>
-        <p>
-            <a class="nav-item" href="#07-repeat">repeat</a>
-        </p>
-        <p>
-            <a class="nav-item" href="#08-guard">guard</a>
-        </p>
+        <p><a class="nav-item" href="#01-intro">intro</a></p>
+        <p><a class="nav-item" href="#02-template-literal">template literal</a></p>
+        <p><a class="nav-item" href="#03-binding-syntax">binding syntax</a></p>
+        <p><a class="nav-item" href="#04-lit-directives-when-if-defined">when/if/defined</a></p>
+        <p><a class="nav-item" href="#05-async-append-replace">async append/replace</a></p>
+        <p><a class="nav-item" href="#06-until">until</a></p>
+        <p><a class="nav-item" href="#07-repeat">repeat</a></p>
+        <p><a class="nav-item" href="#08-guard">guard</a></p>
+        <p><a class="nav-item" href="#09-thanks">bye</a></p>
     </nav>
     <section>
         <header id="hero" class="hero">
             <div class="wrapper">
                 <h1 class="hero-title">lit-html</h1>
                 <p class="hero-caption">An efficient, expressive, extensible HTML templating library for JavaScript</p>
-                <p><a class="hero-link" href="#01-lit-html">Get Started</a></p>
+                <p><a class="hero-link" href="#01-intro">Get Started</a></p>
             </div>
         </header>
-
         <div class="wrapper" id="first"></div>
     </section>
-    <hr />
-
     <section>
         <div class="wrapper" id="second"></div>
     </section>
-
     <footer>
         <div class="wrapper">
             <div class="attribution">

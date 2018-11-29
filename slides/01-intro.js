@@ -2,7 +2,7 @@ import { html, render } from 'https://unpkg.com/lit-html@0.12.0/lit-html.js';
 
 
 /*****************
- * 1. Basic Usage  
+ * Basic Usage  
  *****************/
 
 // Define a template
@@ -10,6 +10,7 @@ const myTemplate = (name) => html`
         <h3>Hello lit-html</h3>
         <p>This is ${name}</p>
         <em>I am a footer</em>
+        <hr />
         `;
 
 // Render the template to the document
@@ -36,7 +37,9 @@ setTimeout(() => {
 //we can also do very fancy stuff
 const complainCase = (word) => `${(word === 'friday' ? 'yaay' : 'pffff')}, it is ${word} again`;
 
-const daysTemplate = (days) => html`<ul>
+const daysTemplate = (days) => html`
+<h3>Template literal with embedded expressions</h3>
+<ul>
     <!-- start of an IIFE in a template -->
     ${(
         //start of an IIFE in a template
